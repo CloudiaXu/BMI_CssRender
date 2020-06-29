@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+</head>
+
+<body>
+
+    <ul class="list"></ul>
+
+    <ul class="list2">
+        <li class="list-card">
+            <h2>小華</h2>
+            <p>你的身高是178</p>
+        </li>
+        <li class="list-card">
+            <h2>小美</h2>
+            <p>你的身高是133</p>
+        </li>
+    </ul>
+    <script>
+        var list = document.querySelector(".list")
+        var data = [];
+        data.push(
+            {
+                id: 0,
+                "name": "廖洧杰",
+                "height": 178
+            }
+        )
+        data.push(
+            {
+                id: 1,
+                "name": "小乖",
+                "height": 120
+            }
+        )
+        data.push(
+            {
+                id: 2,
+                "name": "小麗",
+                "height": 140
+            }
+        )
+        data.push(
+            {
+                id: 3,
+                "name": "小新",
+                "height": 80
+            }
+        )
+        data.push(
+            {
+                id: 4,
+                "name": "小華",
+                "height": 50
+            }
+        )
+        var str = "";
+        data.forEach(function (item) {
+
+            var content = `<li class="list-card" ><h1>${item.name}</h1><p>你的身高是${item.height}</p></li>`
+            str += content;
+
+        })
+
+        function view(addData) {
+            list.innerHTML = addData;
+            render(list);
+        }
+
+        function render(bmiText) {
+            list.classList.remove("list");
+            list.classList.add('list2');
+        }
+        view(str); 
+    </script>
+</body>
+
+</html>
